@@ -48,7 +48,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/sandbox/panchoh/org/")
 
 ;; https://ox-hugo.scripter.co/doc/dates/#date
 ;; https://www.gnu.org/software/emacs/manual/html_node/org/Closing-items.html
@@ -56,20 +56,13 @@
 (setq org-log-done 'time)
 ;; (setq org-log-done-with-time nil)
 
-;; :tools magit
-;; Enable gravatars when viewing commits
-(setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     "))
-;; Tell magit where to look for local repos
-(setq magit-repository-directories `(("~/sandbox"  . 2)
-                                     ("~/exercism" . 2)))
-
 ;; TODO
 ;; projectile-project-search-path SPC p D
 (setq projectile-project-search-path `(("~/sandbox"  . 2)
                                        ("~/exercism" . 2)))
 
 ;;; :ui doom-dashboard
-(setq fancy-splash-image (concat doom-user-dir "pics/arrival_meme_vi_lowres.jpeg"))
+(setq fancy-splash-image (file-name-concat doom-user-dir "pics/arrival_meme_vi_lowres.jpeg"))
 ;; Hide the banner, menu, benchmark and link to GitHub for as minimalistic a
 ;; startup screen as possible.
 ;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-banner)
@@ -83,16 +76,19 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type 'visual)
+;; (setq display-line-numbers-type 'visual)
+(setq display-line-numbers-type 'nil)
 
 ;; IMO, modern editors have trained a bad habit into us all: a burning need for
 ;; completion all the time -- as we type, as we breathe, as we pray to the
 ;; ancient ones -- but how often do you *really* need that information? I say
 ;; rarely. So opt for manual completion:
-;; (setq company-idle-delay nil)
+;; (after! company
+;;   setq company-idle-delay nil))
 
 ;; Can't use 'bitmap, otherwise minimap breaks horribly
-;; (setq highlight-indent-guides-method 'bitmap)
+;; (after! highlight-indent-guides
+;;   (setq highlight-indent-guides-method 'bitmap))
 ;;
 ;; https://github.com/doomemacs/doomemacs/issues/2666
 ;; https://github.com/doomemacs/doomemacs/issues/3604
@@ -111,8 +107,9 @@
 
 ;; TODO: try this!
 ;; Ummmm...
-;; (setq lsp-ui-doc-position 'top)
-;; (setq lsp-ui-doc-show-with-cursor t)
+;; (after! lsp-ui
+;;   (setq lsp-ui-doc-position 'top)
+;;   (setq lsp-ui-doc-show-with-cursor t))
 
 (setq shell-file-name (executable-find "bash"))
 (setq-default vterm-shell (executable-find "fish"))
@@ -120,7 +117,8 @@
 ;; 2021-12-06 @ Salamanca
 ;; https://pkg.go.dev/mvdan.cc/gofumpt
 ;; https://github.com/emacs-lsp/lsp-mode/blob/8f9259af6fc80a609c2c068d0f59c371205aca89/clients/lsp-go.el#L246
-(setq lsp-go-use-gofumpt t)
+(after! lsp-go
+  (setq lsp-go-use-gofumpt t))
 
 ;; Focus on the newly created window
 (setq evil-split-window-below t
@@ -149,20 +147,31 @@
 ;; they are implemented.
 
 
-;; Enable granular diff-highlights for all hunks
+;; :tools magit
 (after! magit
-  (setq magit-diff-refine-hunk 'all))
+  ;; Enable granular diff-highlights for all hunks
+  (setq magit-diff-refine-hunk 'all
+
+          ;; Workaround for stash ops only available through magit-dispatch
+          evil-collection-magit-use-z-for-folds t
+
+          ;; Enable gravatars when viewing commits
+          magit-revision-show-gravatars '("^Author:     " . "^Commit:     ")
+
+          ;; Tell magit where to look for local repos
+          magit-repository-directories `(("~/sandbox"  . 2)
+                                         ("~/exercism" . 2))))
 
 ;; Tweak org-pomodoro
 (after! org-pomodoro
   (setq org-pomodoro-start-sound t
         org-pomodoro-ticking-sound-p nil
         org-pomodoro-audio-player (executable-find "mpv-via-hdmi")
-        org-pomodoro-start-sound (concat doom-user-dir "sounds/bell.mp3")
-        org-pomodoro-finished-sound (concat doom-user-dir "sounds/bell.mp3")
-        org-pomodoro-overtime-sound (concat doom-user-dir "sounds/bell.mp3")
-        org-pomodoro-short-break-sound (concat doom-user-dir "sounds/bell.mp3")
-        org-pomodoro-long-break-sound (concat doom-user-dir "sounds/bells.mp3")))
+        org-pomodoro-start-sound (file-name-concat doom-user-dir "sounds/bell.mp3")
+        org-pomodoro-finished-sound (file-name-concat doom-user-dir "sounds/bell.mp3")
+        org-pomodoro-overtime-sound (file-name-concat doom-user-dir "sounds/bell.mp3")
+        org-pomodoro-short-break-sound (file-name-concat doom-user-dir "sounds/bell.mp3")
+        org-pomodoro-long-break-sound (file-name-concat doom-user-dir "sounds/bells.mp3")))
 
 ;; https://github.com/takaxp/org-tree-slide
 (after! org-tree-slide
@@ -195,8 +204,8 @@
 (defun doom/ediff-init-and-example ()
   "ediff the current `init.el' with the example in doom-emacs-dir"
   (interactive)
-  (ediff-files (concat doom-user-dir "init.el")
-               (concat doom-emacs-dir "templates/init.example.el")))
+  (ediff-files (file-name-concat doom-user-dir "init.el")
+               (file-name-concat doom-emacs-dir "templates/init.example.el")))
 
 (define-key! help-map
   "di"   #'doom/ediff-init-and-example

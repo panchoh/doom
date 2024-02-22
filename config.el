@@ -285,3 +285,9 @@
 ;; https://github.com/doomemacs/doomemacs/issues/2673#issuecomment-595361339
 ;; https://www.emacswiki.org/emacs/WhiteSpace
 ;; (global-whitespace-mode +1)
+
+
+;; https://github.com/artempyanykh/marksman?tab=readme-ov-file#existing-editor-integrations3
+(use-package! markdown-mode
+  :hook (markdown-mode . lsp)
+  :config (require 'lsp-marksman))

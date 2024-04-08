@@ -167,6 +167,8 @@
        (go
         +lsp
         +tree-sitter)        ; the hipster dialect
+       (graphql
+        +lsp)                ; give queries a REST
        (haskell
         +lsp
         +tree-sitter)        ; a language that's lazier than I am

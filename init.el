@@ -119,7 +119,8 @@
         +overlay)            ; run code, run (also, repls)
        (lookup
         +docsets
-        +dictionary)         ; navigate your code and its documentation
+        +dictionary
+        +offline)            ; navigate your code and its documentation
        (lsp
         +peek)               ; M-x vscode
        (magit

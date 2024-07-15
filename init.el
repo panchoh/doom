@@ -100,6 +100,8 @@
 
        :checkers
        (syntax
+        +icons
+        +flymake
         +childframe)         ; tasing you for every semicolon you forget
        (spell
         +flyspell

@@ -21,11 +21,12 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-(setq doom-font                 (font-spec :family "Iosevka"          :size 18 :weight 'light)
-      doom-big-font             (font-spec :family "Iosevka"          :size 32 :weight 'light)
-      doom-symbol-font          (font-spec :family "Noto Color Emoji" :size 18 :weight 'light)
-      doom-variable-pitch-font  (font-spec :family "Iosevka Aile"     :size 16 :weight 'light)
-      doom-serif-font           (font-spec :family "Iosevka Slab"     :size 18 :weight 'light))
+(setq doom-font                 (font-spec :family "Iosevka Comfy"        :size 18)
+      doom-variable-pitch-font  (font-spec :family "Iosevka Comfy Duo"    :size 20)
+      doom-serif-font           (font-spec :family "Iosevka Comfy Motion" :size 18)
+      doom-symbol-font          (font-spec :family "Noto Color Emoji"     :size 18)
+      doom-big-font-increment   4)
+
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the

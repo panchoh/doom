@@ -149,6 +149,12 @@
 
 
 ;; :tools magit
+(use-package! magit-todos
+  :after magit
+  :config
+  (setq magit-todos-keyword-suffix "\\(?:([^)]+)\\)?:?")                                  ; make colon optional
+  (map! :map doom-leader-project-map :desc "List project todos" "t" #'magit-todos-list))  ; SPC p t
+
 (after! magit
   ;; Enable granular diff-highlights for all hunks
   (setq magit-diff-refine-hunk 'all

@@ -54,6 +54,7 @@
 
 (package! pkgbuild-mode)
 
+(package! magit-todos)
 ;; See config.el
 ;; (package! nix-ts-mode)
 ;; (package! nix-ts-mode :recipe (:host github :repo "remi-gelinas/nix-ts-mode" :files ("*.el" "dist")))

@@ -119,7 +119,10 @@
 ;; https://pkg.go.dev/mvdan.cc/gofumpt
 ;; https://github.com/emacs-lsp/lsp-mode/blob/8f9259af6fc80a609c2c068d0f59c371205aca89/clients/lsp-go.el#L246
 (after! lsp-go
-  (setq lsp-go-use-gofumpt t))
+  (setq lsp-go-use-gofumpt t)
+  (setq-default eglot-workspace-configuration
+                '((:gopls . ((gofumpt . t)))))
+  )
 
 ;; Focus on the newly created window
 (setq evil-split-window-below t

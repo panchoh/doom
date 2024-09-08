@@ -15,17 +15,18 @@
 ;;      directory (for easy access to its source code).
 
 (doom! :input
-       ;; chinese
-       ;; japanese
-       ;; layout             ; auie,ctsrnm is the superior home row
+       ;;bidi              ; (tfel ot) thgir etirw uoy gnipleh
+       ;;chinese
+       ;;japanese
+       ;;layout            ; auie,ctsrnm is the superior home row
 
        :completion
+       ;; (company
+       ;;  +childframe)      ; the ultimate code completion backend
        (corfu
         +icons
         +orderless
         +dabbrev)            ; complete with cap(f), cape and a flying feather!
-       ;; (company
-       ;;  +childframe)      ; the ultimate code completion backend
        ;; helm               ; the *other* search engine for love and life
        ;; ido                ; the other *other* search engine...
        ;; ivy                ; a search engine for love and life
@@ -140,7 +141,9 @@
        ;; upload             ; map local to remote projects via ssh/ftp
 
        :os
-       (:if IS-MAC macos)    ; improve compatibility with macOS
+       (:if
+           (featurep :system 'macos)
+           macos)            ; improve compatibility with macOS
        ;; tty                ; improve the terminal Emacs experience
 
        :lang
@@ -251,7 +254,6 @@
        ;; everywhere         ; *leave* Emacs!? You must be joking
        ;; irc                ; how neckbeards socialize
        ;; (rss +org)         ; emacs as an RSS reader
-       ;; twitter            ; twitter client https://twitter.com/vnought
 
        :config
        ;; literate

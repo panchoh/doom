@@ -125,6 +125,7 @@
         +dictionary
         +offline)            ; navigate your code and its documentation
        (lsp
+        ;; +eglot
         +peek)               ; M-x vscode
        (magit
         +forge)              ; a git porcelain for Emacs

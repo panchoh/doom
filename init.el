@@ -56,8 +56,8 @@
         +all
         +defaults)           ; tame sudden yet inevitable temporary windows
        ;; tabs               ; a tab bar for Emacs
-       (treemacs
-        +lsp)                ; a project drawer, like neotree but cooler
+       ;; (treemacs
+       ;;  +lsp)                ; a project drawer, like neotree but cooler
        unicode               ; extended unicode support for various languages
        (vc-gutter
         +pretty)             ; vcs diff in the fringe

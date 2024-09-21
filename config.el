@@ -240,14 +240,16 @@
 ;; SPC c f
 (use-package! lsp-nix
   :defer t
-  :custom (lsp-nix-nil-formatter ["alejandra" "--quiet"]))
+  :custom
+  (lsp-nix-nil-formatter ["alejandra" "--quiet"]))
 
 ;; https://github.com/doomemacs/doomemacs/pull/7497
 ;; Use wrapper that adds the --quiet flag
 ;; SPC m p
 (use-package! nix-mode
   :defer t
-  :custom (nix-nixfmt-bin "alejandra-the-quiet" ))
+  :custom
+  (nix-nixfmt-bin "alejandra-the-quiet" ))
 
 
 ;; If and when nix-ts-mode is merged with nix-mode, I'll consider this.

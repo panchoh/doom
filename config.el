@@ -241,7 +241,8 @@
 (use-package! lsp-nix
   :defer t
   :custom
-  (lsp-nix-nil-formatter ["alejandra" "--quiet"]))
+  (lsp-nix-nil-formatter ["alejandra" "--quiet"])
+  (lsp-nix-nil-max-mem 16384))
 
 ;; https://github.com/doomemacs/doomemacs/pull/7497
 ;; Use wrapper that adds the --quiet flag

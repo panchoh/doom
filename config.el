@@ -253,19 +253,6 @@
   (nix-nixfmt-bin "alejandra-the-quiet" ))
 
 
-;; If and when nix-ts-mode is merged with nix-mode, I'll consider this.
-;; Disabling for now, since I have to choose between the two.
-;; See https://github.com/remi-gelinas/nix-ts-mode/issues/9
-;; let nix-ts-mode handle .nix files instead
-;; (after! nix-mode
-;;   (delete '("\\.nix\\'" . nix-mode) auto-mode-alist))
-;;
-;; https://github.com/remi-gelinas/nix-ts-mode
-;; via: abbe
-;; https://discourse.doomemacs.org/t/associate-a-file-buffer-with-a-particular-major-mode/182
-;; (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-ts-mode))
-
-
 ;; https://www.emacswiki.org/emacs/SmoothScrolling
 (pixel-scroll-precision-mode)
 (setq pixel-scroll-precision-large-scroll-height 40.0)

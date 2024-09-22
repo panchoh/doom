@@ -52,8 +52,6 @@
 
 (package! pinentry)
 
-(package! pkgbuild-mode)
-
 (package! magit-todos)
 ;; See config.el
 ;; (package! nix-ts-mode)

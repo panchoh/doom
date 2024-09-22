@@ -94,16 +94,6 @@
 ;; (after! company
 ;;   setq company-idle-delay nil))
 
-;; Can't use 'bitmap, otherwise minimap breaks horribly
-;; (after! highlight-indent-guides
-;;   (setq highlight-indent-guides-method 'bitmap))
-;;
-;; https://github.com/doomemacs/doomemacs/issues/2666
-;; https://github.com/doomemacs/doomemacs/issues/3604
-;; Does not work as is, but ok if run interactively:
-;; (after! highlight-indent-guides
-;;   (highlight-indent-guides-auto-set-faces))
-
 ;; Disable invasive lsp-mode features
 ;; (setq lsp-ui-doc-enable nil)
 ;; (setq lsp-ui-doc-enable nil

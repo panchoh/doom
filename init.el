@@ -89,6 +89,7 @@
         +icons
         +dirvish)            ; making dired pretty [functional]
        electric              ; smarter, keyword-based electric-indent
+       eww                   ; the internet is gross
        (ibuffer
         +icons)              ; interactive buffer management
        undo                  ; persistent, smarter undo for your inevitable mistakes

@@ -221,17 +221,6 @@
   "di"   #'doom/ediff-init-and-example
   )
 
-
-;; https://github.com/doomemacs/doomemacs/issues/4647
-;; TODO: verify that entry in `packages.el` is also needed!
-;; pinentry
-;; https://www.gnu.org/software/emacs/manual/html_node/epa/GnuPG-Pinentry.html
-(use-package! pinentry
-  :defer t
-  :init (setq epg-pinentry-mode `loopback)
-  (pinentry-start))
-
-
 ;; alejandra nix formatter
 ;; This uses apheleia underneath, which preserves point position.
 (set-formatter! 'alejandra '("alejandra" "--quiet") :modes '(nix-mode))

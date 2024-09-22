@@ -10,7 +10,7 @@
 
 My config for [Doom Emacs](https://doomemacs.org).
 
-Don't forget to check Doom Emacs' author own
+Don’t forget to check Doom Emacs’ author own
 [config](https://github.com/hlissner/.doom.d), which is full of wisdom
 (directly from the Ancient Ones, it is said) that I pillaged to create mine.
 
@@ -18,5 +18,6 @@ Don't forget to check Doom Emacs' author own
 ## Install
 
 ```sh
-git clone https://github.com/panchoh/dotconfig-doom.git ~/.config/doom && doom sync
+git clone --depth=1 https://github.com/doomemacs/doomemacs.git ~/.config/emacs
+git clone https://github.com/panchoh/dotconfig-doom.git ~/.config/doom && doom sync --aot
 ```

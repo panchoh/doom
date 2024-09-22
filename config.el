@@ -271,17 +271,6 @@
 (setq pixel-scroll-precision-large-scroll-height 40.0)
 
 
-;; accept completion from copilot and fallback to company
-;; (use-package! copilot
-;;   :defer t
-;;   :hook (prog-mode . copilot-mode)
-;;   :bind (:map copilot-completion-map
-;;               ("<tab>" . 'copilot-accept-completion)
-;;               ("TAB" . 'copilot-accept-completion)
-;;               ("C-TAB" . 'copilot-accept-completion-by-word)
-;;               ("C-<tab>" . 'copilot-accept-completion-by-word)))
-
-
 ;; https://github.com/minad/vertico/issues/262
 ;; https://discourse.doomemacs.org/t/how-to-re-bind-keys/56
 (map! :after vertico

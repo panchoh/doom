@@ -264,4 +264,5 @@
        ;; literate
        (default
         +bindings
+        +gnupg
         +smartparens))

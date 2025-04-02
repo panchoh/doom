@@ -55,6 +55,7 @@
        (popup
         +all
         +defaults)           ; tame sudden yet inevitable temporary windows
+       ;; smooth-scroll      ; So smooth you won't believe it's not butter
        ;; tabs               ; a tab bar for Emacs
        ;; (treemacs
        ;;  +lsp)                ; a project drawer, like neotree but cooler

@@ -69,6 +69,10 @@
 (setq projectile-project-search-path `(("~/sandbox"  . 2)
                                        ("~/exercism" . 2)))
 
+;; Workaround for #8356
+;; TODO: remove when fixed upstream, or leave it in place if it is deemed a user setting
+(setq projectile-auto-discover t)
+
 ;;; :ui doom-dashboard
 (setq fancy-splash-image (file-name-concat doom-user-dir "pics/arrival_meme_vi_lowres.jpeg"))
 ;; Hide the banner, menu, benchmark and link to GitHub for as minimalistic a

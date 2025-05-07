@@ -70,7 +70,7 @@
                                        ("~/exercism" . 2)))
 
 ;; Workaround for #8356
-;; TODO: remove when fixed upstream, or leave it in place if it is deemed a user setting
+;; https://github.com/doomemacs/doomemacs/issues/8356#issuecomment-2853333642
 (setq projectile-auto-discover t)
 
 ;;; :ui doom-dashboard

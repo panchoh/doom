@@ -137,8 +137,6 @@
        (pass
         +auth)               ; password manager for nerds
        pdf                   ; pdf enhancements
-       ;; rgb                ; creating color strings
-       ;; taskrunner         ; taskrunner for all your projects
        terraform             ; infrastructure as code
        tmux                  ; an API for interacting with tmux
        tree-sitter           ; syntax and parsing, sitting in a tree...
@@ -229,7 +227,7 @@
         +jq)                 ; Emacs as a REST client
        ;; rst                ; ReST in peace
        ;; (ruby +rails)      ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       ;; rust               ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       ;;(rust +lsp)         ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;; scala              ; java, but good
        ;; (scheme +guile)    ; a fully conniving family of lisps
        (sh

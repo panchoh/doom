@@ -127,6 +127,7 @@
         +docsets
         +dictionary
         +offline)            ; navigate your code and its documentation
+       llm                   ; when I said you needed friends, I didn't mean...
        (lsp
         ;; +eglot
         +peek)               ; M-x vscode

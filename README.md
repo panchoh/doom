@@ -19,5 +19,5 @@ Don’t forget to check Doom Emacs’ author own
 
 ```sh
 git clone --depth=1 https://github.com/doomemacs/doomemacs.git ~/.config/emacs
-git clone https://github.com/panchoh/dotconfig-doom.git ~/.config/doom && doom sync --aot
+git clone https://github.com/panchoh/doom.git ~/.config/doom && doom sync --aot
 ```

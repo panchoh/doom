@@ -237,25 +237,13 @@
   "di"   #'doom/ediff-init-and-example
   )
 
-;; alejandra nix formatter
-;; This uses apheleia underneath, which preserves point position.
-(set-formatter! 'alejandra '("alejandra" "--quiet") :modes '(nix-mode))
-
 ;; https://github.com/oxalica/nil?tab=readme-ov-file#emacs-with-lsp-mode
 ;; SPC c f
 (use-package! lsp-nix
   :defer t
   :custom
-  (lsp-nix-nil-formatter ["alejandra" "--quiet"])
+  (lsp-nix-nil-formatter ["nixfmt"])
   (lsp-nix-nil-max-mem 16384))
-
-;; https://github.com/doomemacs/doomemacs/pull/7497
-;; Use wrapper that adds the --quiet flag
-;; SPC m p
-(use-package! nix-mode
-  :defer t
-  :custom
-  (nix-nixfmt-bin "alejandra-the-quiet" ))
 
 
 ;; https://www.emacswiki.org/emacs/SmoothScrolling

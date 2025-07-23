@@ -46,8 +46,7 @@
 
 ;; Enable Alarm Bell
 ;; https://www.emacswiki.org/emacs/AlarmBell
-(setq visible-bell       1
-      ring-bell-function nil)
+(setq visible-bell t)
 
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Sentences.html
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Commands.html

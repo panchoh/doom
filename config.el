@@ -272,3 +272,13 @@
 (use-package! markdown-mode
   :hook (markdown-mode . lsp)
   :config (require 'lsp-marksman))
+
+
+(use-package! emojify
+  :defer t
+  :commands (emojify-mode global-emojify-mode)
+  :init
+  ;; Inline lambda to always skip confirmation
+  (advice-add 'emojify--confirm-emoji-download :override (lambda () t))
+
+  :hook (after-init . global-emojify-mode))

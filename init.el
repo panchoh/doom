@@ -31,7 +31,6 @@
        ;; ido                ; the other *other* search engine...
        ;; ivy                ; a search engine for love and life
        (vertico
-        +childframe
         +icons)              ; the search engine of the future
 
        :ui
@@ -105,8 +104,7 @@
        :checkers
        (syntax
         +icons
-        +flymake
-        +childframe)         ; tasing you for every semicolon you forget
+        +flymake)            ; tasing you for every semicolon you forget
        (spell
         +flyspell
         +everywhere)         ; tasing you for misspelling mispelling

@@ -110,7 +110,8 @@
         +offline)            ; navigate your code and its documentation
        llm                   ; when I said you needed friends, I didn't mean...
        (lsp
-        ;; +eglot
+        +eglot
+        +booster
         +peek)               ; M-x vscode
        (magit
         +forge)              ; a git porcelain for Emacs

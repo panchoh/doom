@@ -130,10 +130,6 @@
                 '((:gopls . ((gofumpt . t)))))
   )
 
-;; Focus on the newly created window
-(setq evil-split-window-below t
-      evil-vsplit-window-right t)
-
 ;; Disable confirmation on exit
 ;; https://github.com/hlissner/doom-emacs/issues/2688
 (setq confirm-kill-emacs nil)
@@ -170,6 +166,11 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(after! evil
+  ;; Focus on the newly created window
+  (setq evil-split-window-below t
+        evil-vsplit-window-right t))
 
 
 ;; :tools magit

@@ -49,6 +49,10 @@
 ;; https://www.emacswiki.org/emacs/AlarmBell
 (setopt visible-bell t)
 
+;; https://www.emacswiki.org/emacs/SmoothScrolling
+(setopt pixel-scroll-precision-large-scroll-height 40.0)
+(pixel-scroll-precision-mode)
+
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Sentences.html
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Commands.html
 (setopt sentence-end-double-space t
@@ -260,11 +264,6 @@
 (after! eglot
   (setq-default eglot-workspace-configuration
                 '((:gopls . ((gofumpt . t))))))
-
-
-;; https://www.emacswiki.org/emacs/SmoothScrolling
-(pixel-scroll-precision-mode)
-(setopt pixel-scroll-precision-large-scroll-height 40.0)
 
 
 ;; https://github.com/minad/vertico/issues/262

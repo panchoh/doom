@@ -63,14 +63,9 @@
 (setq org-log-done 'time)
 ;; (setq org-log-done-with-time nil)
 
-;; TODO
 ;; projectile-project-search-path SPC p D
-(setq projectile-project-search-path `(("~/sandbox"  . 2)
-                                       ("~/exercism" . 2)))
-
-;; Workaround for #8356
-;; https://github.com/doomemacs/doomemacs/issues/8356#issuecomment-2853333642
-(setq projectile-auto-discover t)
+(setopt projectile-project-search-path `(("~/sandbox"  . 2)
+                                         ("~/exercism" . 2)))
 
 ;;; :ui doom-dashboard
 (setq fancy-splash-image (file-name-concat doom-user-dir "pics/arrival_meme_vi_lowres.jpeg"))
@@ -212,6 +207,12 @@
   ;; Apply all available highlighting
   ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Parser_002dbased-Font-Lock.html
   (setopt treesit-font-lock-level 4))
+
+
+;; Workaround for #8356
+;; https://github.com/doomemacs/doomemacs/issues/8356#issuecomment-2853333642
+(after! projectile
+  (setopt projectile-auto-discover t))
 
 
 (after! go-mode ; in this case the major mode and package named the same thing

@@ -280,7 +280,8 @@
 ;; (global-whitespace-mode +1)
 
 
+;; TODO: this is needed for LSP-mode only, make its use conditional to featurep! lsp-mode or st.
 ;; https://github.com/artempyanykh/marksman?tab=readme-ov-file#existing-editor-integrations3
-(use-package! markdown-mode
-  :hook (markdown-mode . lsp)
-  :config (require 'lsp-marksman))
+;; (use-package! markdown-mode
+;;   :hook '(markdown-mode . lsp)
+;;   :config (require 'lsp-marksman))

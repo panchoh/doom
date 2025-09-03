@@ -121,15 +121,6 @@
 (setq shell-file-name (executable-find "bash"))
 (setq-default vterm-shell (executable-find "fish"))
 
-;; 2021-12-06 @ Salamanca
-;; https://pkg.go.dev/mvdan.cc/gofumpt
-;; https://github.com/emacs-lsp/lsp-mode/blob/8f9259af6fc80a609c2c068d0f59c371205aca89/clients/lsp-go.el#L246
-(after! lsp-go
-  (setq lsp-go-use-gofumpt t)
-  (setq-default eglot-workspace-configuration
-                '((:gopls . ((gofumpt . t)))))
-  )
-
 ;; Disable confirmation on exit
 ;; https://github.com/hlissner/doom-emacs/issues/2688
 (setq confirm-kill-emacs nil)
@@ -250,6 +241,19 @@
   :custom
   (lsp-nix-nil-formatter ["nixfmt"])
   (lsp-nix-nil-max-mem 16384))
+
+;; 2021-12-06 @ Salamanca
+;; https://pkg.go.dev/mvdan.cc/gofumpt
+;; https://github.com/mvdan/gofumpt?tab=readme-ov-file#emacs
+;; https://github.com/emacs-lsp/lsp-mode/blob/c74a723870f86cf9d1b7aee5e6e2add10d9ce127/clients/lsp-go.el#L245-L249
+(after! lsp-go
+  (setopt lsp-go-use-gofumpt t))
+
+;; https://pkg.go.dev/mvdan.cc/gofumpt
+;; https://github.com/mvdan/gofumpt?tab=readme-ov-file#emacs
+(after! eglot
+  (setq-default eglot-workspace-configuration
+                '((:gopls . ((gofumpt . t))))))
 
 
 ;; https://www.emacswiki.org/emacs/SmoothScrolling

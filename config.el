@@ -214,16 +214,17 @@
   (setopt treesit-font-lock-level 4))
 
 
-;; (after! go-mode ; in this case the major mode and package named the same thing
-;;   (set-ligatures! 'go-mode
-;;     :def "func" ; function keyword
-;;     :true "true" :false "false"
-;;     ; this will replace not only definitions
-;;     ; but corresponding functions as well
-;;     :int "int" :str "string"
-;;     :float "float" :bool "bool"
-;;     :for "for"
-;;     :return "return" :yield "yield"))
+(after! go-mode ; in this case the major mode and package named the same thing
+  (set-ligatures! 'go-mode
+    :def "func" ; function keyword
+    :true "true" :false "false"
+    ; this will replace not only definitions
+    ; but corresponding functions as well
+    :int "int" :str "string"
+    :float "float" :bool "bool"
+    :for "for"
+    :return "return" :yield "yield"))
+
 
 ;; ediff init.el against current init.example.el
 ;; https://github.com/hlissner/doom-emacs/issues/581#issuecomment-645448095

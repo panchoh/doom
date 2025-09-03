@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "pancho horrillo"
-      user-mail-address "pancho@pancho.name")
+(setopt user-full-name "pancho horrillo"
+        user-mail-address "pancho@pancho.name")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -21,24 +21,25 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
-;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+;;(setopt doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
+;;        doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
-(setq doom-font                 (font-spec :family "Iosevka Comfy"        :size 18)
-      doom-variable-pitch-font  (font-spec :family "Iosevka Comfy Duo"    :size 20)
-      doom-serif-font           (font-spec :family "Iosevka Comfy Motion" :size 18)
-      doom-symbol-font          (font-spec :family "Noto Color Emoji"     :size 18)
-      doom-big-font-increment   4)
+(setopt doom-font                 (font-spec :family "Iosevka Comfy"        :size 18)
+        doom-variable-pitch-font  (font-spec :family "Iosevka Comfy Duo"    :size 20)
+        doom-serif-font           (font-spec :family "Iosevka Comfy Motion" :size 18)
+        doom-symbol-font          (font-spec :family "Noto Color Emoji"     :size 18))
 
+;; For doom-big-font-mode
+(setq doom-big-font-increment 4)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-dracula)
+(setopt doom-theme 'doom-dracula)
 
 ;; Use `doom-colors' theme on treemacs (with icons!)
 ;; Possible caveat: https://github.com/hlissner/emacs-doom-themes/issues/392
@@ -46,29 +47,29 @@
 
 ;; Enable Alarm Bell
 ;; https://www.emacswiki.org/emacs/AlarmBell
-(setq visible-bell t)
+(setopt visible-bell t)
 
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Sentences.html
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Commands.html
-(setq sentence-end-double-space t
-      colon-double-space        t)
+(setopt sentence-end-double-space t
+        colon-double-space        t)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/sandbox/panchoh/org/")
+(setopt org-directory "~/sandbox/panchoh/org/")
 
 ;; https://ox-hugo.scripter.co/doc/dates/#date
 ;; https://www.gnu.org/software/emacs/manual/html_node/org/Closing-items.html
 ;; https://emacs.stackexchange.com/questions/47951/marking-a-todo-item-done-does-not-create-a-closing-timestamp-in-org-mode
-(setq org-log-done 'time)
-;; (setq org-log-done-with-time nil)
+(setopt org-log-done 'time)
+;; (setopt org-log-done-with-time nil)
 
 ;; projectile-project-search-path SPC p D
 (setopt projectile-project-search-path `(("~/sandbox"  . 2)
                                          ("~/exercism" . 2)))
 
 ;;; :ui doom-dashboard
-(setq fancy-splash-image (file-name-concat doom-user-dir "pics/arrival_meme_vi_lowres.jpeg"))
+(setopt fancy-splash-image (file-name-concat doom-user-dir "pics/arrival_meme_vi_lowres.jpeg"))
 ;; Hide the banner, menu, benchmark and link to GitHub for as minimalistic a
 ;; startup screen as possible.
 ;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-banner)
@@ -84,8 +85,8 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-;; (setq display-line-numbers-type 'visual)
-(setq display-line-numbers-type 'nil)
+;; (setopt display-line-numbers-type 'visual)
+(setopt display-line-numbers-type 'nil)
 
 ;; IMO, modern editors have trained a bad habit into us all: a burning need for
 ;; completion all the time -- as we type, as we breathe, as we pray to the
@@ -109,12 +110,12 @@
 ;;   (setq lsp-ui-doc-position 'top)
 ;;   (setq lsp-ui-doc-show-with-cursor t))
 
-(setq shell-file-name (executable-find "bash"))
+(setopt shell-file-name (executable-find "bash"))
 (setq-default vterm-shell (executable-find "fish"))
 
 ;; Disable confirmation on exit
 ;; https://github.com/hlissner/doom-emacs/issues/2688
-(setq confirm-kill-emacs nil)
+(setopt confirm-kill-emacs nil)
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -151,20 +152,20 @@
 
 (after! evil
   ;; Focus on the newly created window
-  (setq evil-split-window-below t
-        evil-vsplit-window-right t))
+  (setopt evil-split-window-below t
+          evil-vsplit-window-right t))
 
 
 ;; :tools magit
 (use-package! magit-todos
   :after magit
   :config
-  (setq magit-todos-keyword-suffix "\\(?:([^)]+)\\)?:?")                                  ; make colon optional
+  (setopt magit-todos-keyword-suffix "\\(?:([^)]+)\\)?:?")                                  ; make colon optional
   (map! :map doom-leader-project-map :desc "List project todos" "t" #'magit-todos-list))  ; SPC p t
 
 (after! magit
   ;; Enable granular diff-highlights for all hunks
-  (setq magit-diff-refine-hunk 'all
+  (setopt magit-diff-refine-hunk 'all
 
           ;; Workaround for stash ops only available through magit-dispatch
           evil-collection-magit-use-z-for-folds t
@@ -263,7 +264,7 @@
 
 ;; https://www.emacswiki.org/emacs/SmoothScrolling
 (pixel-scroll-precision-mode)
-(setq pixel-scroll-precision-large-scroll-height 40.0)
+(setopt pixel-scroll-precision-large-scroll-height 40.0)
 
 
 ;; https://github.com/minad/vertico/issues/262

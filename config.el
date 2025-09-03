@@ -44,6 +44,10 @@
 ;; Possible caveat: https://github.com/hlissner/emacs-doom-themes/issues/392
 (setq doom-themes-treemacs-theme 'doom-colors)
 
+;; Apply all available highlighting
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Parser_002dbased-Font-Lock.html
+(setq treesit-font-lock-level 4)
+
 ;; Enable Alarm Bell
 ;; https://www.emacswiki.org/emacs/AlarmBell
 (setq visible-bell t)

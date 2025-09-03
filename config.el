@@ -44,10 +44,6 @@
 ;; Possible caveat: https://github.com/hlissner/emacs-doom-themes/issues/392
 (setq doom-themes-treemacs-theme 'doom-colors)
 
-;; Apply all available highlighting
-;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Parser_002dbased-Font-Lock.html
-(setq treesit-font-lock-level 4)
-
 ;; Enable Alarm Bell
 ;; https://www.emacswiki.org/emacs/AlarmBell
 (setq visible-bell t)
@@ -210,6 +206,13 @@
   (defun org-hugo-export-all-wim-to-md ()
     (interactive)
     (org-hugo-export-wim-to-md :all-subtrees nil nil :noerror)))
+
+
+(after! treesit
+  ;; Apply all available highlighting
+  ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Parser_002dbased-Font-Lock.html
+  (setopt treesit-font-lock-level 4))
+
 
 ;; (after! go-mode ; in this case the major mode and package named the same thing
 ;;   (set-ligatures! 'go-mode

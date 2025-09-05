@@ -208,12 +208,6 @@
     (org-hugo-export-wim-to-md :all-subtrees nil nil :noerror)))
 
 
-(after! treesit
-  ;; Apply all available highlighting
-  ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Parser_002dbased-Font-Lock.html
-  (setopt treesit-font-lock-level 4))
-
-
 ;; Workaround for #8356
 ;; https://github.com/doomemacs/doomemacs/issues/8356#issuecomment-2853333642
 (after! projectile

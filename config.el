@@ -268,6 +268,12 @@
       "M-DEL" #'vertico-directory-delete-char)
 
 
+;; https://github.com/doomemacs/doomemacs/issues/8460#issuecomment-3194641112
+;; (map! :leader
+;;       :desc "Save buffer"
+;;       "f s" #'save-buffer)
+
+
 ;; https://github.com/doomemacs/doomemacs/issues/2673#issuecomment-595361339
 ;; https://www.emacswiki.org/emacs/WhiteSpace
 ;; (global-whitespace-mode +1)

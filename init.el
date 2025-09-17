@@ -96,6 +96,8 @@
 
        :tools
        ansible
+       (collab
+        +tunnel)             ; buffers with friends
        debugger              ; FIXME stepping through code, to help you add bugs
        direnv
        ;; (docker

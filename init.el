@@ -96,8 +96,7 @@
 
        :tools
        ansible
-       (debugger
-        +lsp)                ; FIXME stepping through code, to help you add bugs
+       debugger              ; FIXME stepping through code, to help you add bugs
        direnv
        ;; (docker
        ;; +lsp)              ; FIXME managing docker services from Emacs

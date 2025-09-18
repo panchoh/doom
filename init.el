@@ -113,8 +113,7 @@
        llm                   ; when I said you needed friends, I didn't mean...
        (lsp
         +eglot
-        +booster
-        +peek)               ; M-x vscode
+        +booster)            ; M-x vscode
        (magit
         +forge)              ; a git porcelain for Emacs
        make                  ; run make tasks from Emacs

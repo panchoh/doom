@@ -238,20 +238,22 @@
   "di"   #'doom/ediff-init-and-example
   )
 
+;; TODO: this is needed for LSP-mode only, make its use conditional to featurep! lsp-mode or st.
 ;; https://github.com/oxalica/nil?tab=readme-ov-file#emacs-with-lsp-mode
 ;; SPC c f
-(use-package! lsp-nix
-  :defer t
-  :custom
-  (lsp-nix-nil-formatter ["nixfmt"])
-  (lsp-nix-nil-max-mem 16384))
+;; (use-package! lsp-nix
+;;   :defer t
+;;   :custom
+;;   (lsp-nix-nil-formatter ["nixfmt"])
+;;   (lsp-nix-nil-max-mem 16384))
 
+;; TODO: this is needed for LSP-mode only, make its use conditional to featurep! lsp-mode or st.
 ;; 2021-12-06 @ Salamanca
 ;; https://pkg.go.dev/mvdan.cc/gofumpt
 ;; https://github.com/mvdan/gofumpt?tab=readme-ov-file#emacs
 ;; https://github.com/emacs-lsp/lsp-mode/blob/c74a723870f86cf9d1b7aee5e6e2add10d9ce127/clients/lsp-go.el#L245-L249
-(after! lsp-go
-  (setopt lsp-go-use-gofumpt t))
+;; (after! lsp-go
+;;   (setopt lsp-go-use-gofumpt t))
 
 ;; https://pkg.go.dev/mvdan.cc/gofumpt
 ;; https://github.com/mvdan/gofumpt?tab=readme-ov-file#emacs

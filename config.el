@@ -181,6 +181,14 @@
           magit-repository-directories `(("~/sandbox"  . 2)
                                          ("~/exercism" . 2))))
 
+
+;; https://github.com/gggion/ob-duckdb?tab=readme-ov-file#doom-emacs
+(use-package! ob-duckdb)
+(after! org
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               (append org-babel-load-languages '((duckdb . t)))))
+
+
 ;; Tweak org-pomodoro
 (after! org-pomodoro
   (setq org-pomodoro-start-sound t

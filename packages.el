@@ -50,3 +50,9 @@
 ;; (unpin! t)
 
 (package! magit-todos)
+
+(package! ob-duckdb
+  :pin "47a9935e70922140628a15ee0df6063f9fa57212"
+  :recipe (:host github
+           :repo "gggion/ob-duckdb"
+           :files ("*.el")))

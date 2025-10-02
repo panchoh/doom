@@ -153,6 +153,12 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+;;
+(after! emacs
+  (map! :leader
+        :desc "Toggle prettify-symbols-mode"
+        "t P" #'prettify-symbols-mode))
+
 
 (after! evil
   ;; Focus on the newly created window

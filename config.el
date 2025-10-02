@@ -228,16 +228,29 @@
   (setopt projectile-auto-discover t))
 
 
+;; https://docs.doomemacs.org/latest/modules/ui/ligatures/#setting-ligatures
 (after! go-mode ; in this case the major mode and package named the same thing
   (set-ligatures! 'go-mode
-    :def "func" ; function keyword
-    :true "true" :false "false"
-    ; this will replace not only definitions
-    ; but corresponding functions as well
-    :int "int" :str "string"
-    :float "float" :bool "bool"
+    ;; function definition
+    :def "func"
+
+    ;; boolean values
+    :true "true"
+    :false "false"
+
+    ;; types
+    :bool "bool"
+    :int "int"
+    :str "string"
+    :float "float"
+    :null "nil"
+
+    ;; flow
     :for "for"
-    :return "return" :yield "yield"))
+    :not "!"
+    :and "&&"
+    :or "||"
+    :return "return"))
 
 
 ;; ediff init.el against current init.example.el

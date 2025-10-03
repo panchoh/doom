@@ -28,10 +28,10 @@
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
-(setopt doom-font                 (font-spec :family "Iosevka Comfy"        :size 18)
-        doom-variable-pitch-font  (font-spec :family "Iosevka Comfy Duo"    :size 20)
-        doom-serif-font           (font-spec :family "Iosevka Comfy Motion" :size 18)
-        doom-symbol-font          (font-spec :family "Noto Color Emoji"     :size 18))
+(setopt doom-font                 (font-spec :family "Aporetic Sans Mono" :size 18)
+        doom-variable-pitch-font  (font-spec :family "Aporetic Sans"      :size 20)
+        doom-serif-font           (font-spec :family "Aporetic Serif"     :size 18)
+        doom-symbol-font          (font-spec :family "Noto Color Emoji"   :size 18))
 
 ;; For doom-big-font-mode
 (setq doom-big-font-increment 4)

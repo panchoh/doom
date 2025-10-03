@@ -259,7 +259,7 @@
   "ediff the current `init.el' with the example in doom-emacs-dir"
   (interactive)
   (ediff-files (file-name-concat doom-user-dir "init.el")
-               (file-name-concat doom-emacs-dir "templates/init.example.el")))
+               (file-name-concat doom-emacs-dir "static/init.example.el")))
 
 (define-key! help-map
   "di"   #'doom/ediff-init-and-example

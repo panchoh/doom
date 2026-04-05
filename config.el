@@ -180,7 +180,7 @@
           magit-revision-show-gravatars '("^Author:     " . "^Commit:     ")
 
           ;; Tell magit where to look for local repos
-          magit-repository-directories `(("~/sandbox"  . 2)
+          magit-repository-directories '(("~/sandbox"  . 2)
                                          ("~/exercism" . 2))))
 
 

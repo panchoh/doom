@@ -68,10 +68,6 @@
 (setopt org-log-done 'time)
 ;; (setopt org-log-done-with-time nil)
 
-;; projectile-project-search-path SPC p D
-(setopt projectile-project-search-path `(("~/sandbox"  . 2)
-                                         ("~/exercism" . 2)))
-
 ;;; :ui doom-dashboard
 (setopt fancy-splash-image (file-name-concat doom-user-dir "pics/arrival_meme_vi_lowres.jpeg"))
 ;; Hide the banner, menu, benchmark and link to GitHub for as minimalistic a
@@ -222,10 +218,13 @@
     (org-hugo-export-wim-to-md :all-subtrees nil nil :noerror)))
 
 
-;; Workaround for #8356
-;; https://github.com/doomemacs/doomemacs/issues/8356#issuecomment-2853333642
 (after! projectile
-  (setopt projectile-auto-discover t))
+  ;; Workaround for #8356
+  ;; https://github.com/doomemacs/doomemacs/issues/8356#issuecomment-2853333642
+  (setopt projectile-auto-discover t
+          ;; projectile-project-search-path SPC p D
+          projectile-project-search-path '(("~/sandbox"  . 2)
+                                           ("~/exercism" . 2))))
 
 
 ;; https://docs.doomemacs.org/latest/modules/ui/ligatures/#setting-ligatures

@@ -221,6 +221,8 @@
   ;; Workaround for #8356
   ;; https://github.com/doomemacs/doomemacs/issues/8356#issuecomment-2853333642
   (setopt projectile-auto-discover t
+          ;; M-x projectile-cleanup-known-projects
+          projectile-auto-cleanup-known-projects t
           ;; projectile-project-search-path SPC p D
           projectile-project-search-path '(("~/sandbox"  . 2)
                                            ("~/exercism" . 2))))

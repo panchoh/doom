@@ -53,6 +53,8 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
+;; Let straight.el use tarballs for better performance, since it seems to be
+;; safe on our NixOS environment:
 ;; https://github.com/doomemacs/doomemacs/commit/b793fb5642a1d5fe2f6bb20d9c7e8a298837aa32
 (setq straight-vc-use-snapshot-installation t)
 

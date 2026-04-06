@@ -59,7 +59,7 @@
 (package! magit-todos)
 
 (package! ob-duckdb
-  :pin "47a9935e70922140628a15ee0df6063f9fa57212"
+  :pin "560507c85db252a01396e73b2cf719b5720e6bc1"
   :recipe (:host github
            :repo "gggion/ob-duckdb"
            :files ("*.el")))

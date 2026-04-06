@@ -92,7 +92,7 @@
 ;; completion all the time -- as we type, as we breathe, as we pray to the
 ;; ancient ones -- but how often do you *really* need that information? I say
 ;; rarely. So opt for manual completion:
-;; (after! company
+;; (with-eval-after-load 'company
 ;;   setq company-idle-delay nil))
 
 ;; Disable invasive lsp-mode features
@@ -106,7 +106,7 @@
 
 ;; TODO: try this!
 ;; Ummmm...
-;; (after! lsp-ui
+;; (with-eval-after-load 'lsp-ui
 ;;   (setq lsp-ui-doc-position 'top)
 ;;   (setq lsp-ui-doc-show-with-cursor t))
 
@@ -119,9 +119,10 @@
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
-;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
+;; `with-eval-after-load' block, otherwise Doom's defaults may override your
+;; settings. E.g.
 ;;
-;;   (after! PACKAGE
+;;   (with-eval-after-load 'PACKAGE
 ;;     (setq x y))
 ;;
 ;; The exceptions to this rule:
@@ -134,8 +135,6 @@
 ;; Here are some additional functions/macros that will help you configure Doom.
 ;;
 ;; - `load!' for loading external *.el files relative to this one
-;; - `use-package!' for configuring packages
-;; - `after!' for running code after a package has loaded
 ;; - `add-load-path!' for adding directories to the `load-path', relative to
 ;;   this file. Emacs searches the `load-path' when you load packages with
 ;;   `require' or `use-package'.
@@ -150,26 +149,26 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 ;;
-(after! emacs
+(with-eval-after-load 'emacs
   (map! :leader
         :desc "Toggle prettify-symbols-mode"
         "t P" #'prettify-symbols-mode))
 
 
-(after! evil
+(with-eval-after-load 'evil
   ;; Focus on the newly created window
   (setopt evil-split-window-below t
           evil-vsplit-window-right t))
 
 
 ;; :tools magit
-(use-package! magit-todos
+(use-package magit-todos
   :after magit
   :config
   (setopt magit-todos-keyword-suffix "\\(?:([^)]+)\\)?:?")                                  ; make colon optional
   (map! :map doom-leader-project-map :desc "List project todos" "t" #'magit-todos-list))  ; SPC p t
 
-(after! magit
+(with-eval-after-load 'magit
   ;; Enable granular diff-highlights for all hunks
   (setopt magit-diff-refine-hunk 'all
 
@@ -185,14 +184,14 @@
 
 
 ;; https://github.com/gggion/ob-duckdb?tab=readme-ov-file#doom-emacs
-(use-package! ob-duckdb)
-(after! org
+(use-package ob-duckdb)
+(with-eval-after-load 'org
   (org-babel-do-load-languages 'org-babel-load-languages
                                (append org-babel-load-languages '((duckdb . t)))))
 
 
 ;; Tweak org-pomodoro
-(after! org-pomodoro
+(with-eval-after-load 'org-pomodoro
   (setq org-pomodoro-start-sound t
         org-pomodoro-ticking-sound-p nil
         org-pomodoro-audio-player (executable-find "mpv-via-hdmi")
@@ -203,7 +202,7 @@
         org-pomodoro-long-break-sound (file-name-concat doom-user-dir "sounds/bells.mp3")))
 
 ;; https://github.com/takaxp/org-tree-slide
-(after! org-tree-slide
+(with-eval-after-load 'org-tree-slide
   ;; Don't increase the font size
   (setq +org-present-text-scale 0)
   ;; Remove indicators
@@ -212,13 +211,13 @@
                                    :content nil)))
 
 ;; Provide a function to export all entries at once
-(after! ox-hugo
+(with-eval-after-load 'ox-hugo
   (defun org-hugo-export-all-wim-to-md ()
     (interactive)
     (org-hugo-export-wim-to-md :all-subtrees nil nil :noerror)))
 
 
-(after! projectile
+(with-eval-after-load 'projectile
   ;; Workaround for #8356
   ;; https://github.com/doomemacs/doomemacs/issues/8356#issuecomment-2853333642
   (setopt projectile-auto-discover t
@@ -228,7 +227,7 @@
 
 
 ;; https://docs.doomemacs.org/latest/modules/ui/ligatures/#setting-ligatures
-(after! go-mode ; in this case the major mode and package named the same thing
+(with-eval-after-load 'go-mode ; in this case the major mode and package named the same thing
   (set-ligatures! 'go-mode
     ;; function definition
     :def "func"
@@ -267,7 +266,7 @@
 ;; TODO: this is needed for LSP-mode only, make its use conditional to featurep! lsp-mode or st.
 ;; https://github.com/oxalica/nil?tab=readme-ov-file#emacs-with-lsp-mode
 ;; SPC c f
-;; (use-package! lsp-nix
+;; (use-package lsp-nix
 ;;   :defer t
 ;;   :custom
 ;;   (lsp-nix-nil-formatter ["nixfmt"])
@@ -278,12 +277,12 @@
 ;; https://pkg.go.dev/mvdan.cc/gofumpt
 ;; https://github.com/mvdan/gofumpt?tab=readme-ov-file#emacs
 ;; https://github.com/emacs-lsp/lsp-mode/blob/c74a723870f86cf9d1b7aee5e6e2add10d9ce127/clients/lsp-go.el#L245-L249
-;; (after! lsp-go
+;; (with-eval-after-load 'lsp-go
 ;;   (setopt lsp-go-use-gofumpt t))
 
 ;; https://pkg.go.dev/mvdan.cc/gofumpt
 ;; https://github.com/mvdan/gofumpt?tab=readme-ov-file#emacs
-(after! eglot
+(with-eval-after-load 'eglot
   (setq-default eglot-workspace-configuration
                 '((:gopls . ((gofumpt . t))))))
 
@@ -303,6 +302,6 @@
 
 ;; TODO: this is needed for LSP-mode only, make its use conditional to featurep! lsp-mode or st.
 ;; https://github.com/artempyanykh/marksman?tab=readme-ov-file#existing-editor-integrations3
-;; (use-package! markdown-mode
+;; (use-package markdown-mode
 ;;   :hook '(markdown-mode . lsp)
 ;;   :config (require 'lsp-marksman))

@@ -65,3 +65,6 @@
   :recipe (:host github
            :repo "gggion/ob-duckdb"
            :files ("*.el")))
+
+;; FIXME: Pinning projectile.el until issue is fixed
+(package! projectile :pin "c0ae91cec393354491512abe48ec70e59e00436c")

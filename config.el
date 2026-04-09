@@ -179,8 +179,19 @@
           magit-revision-show-gravatars '("^Author:     " . "^Commit:     ")
 
           ;; Tell magit where to look for local repos
-          magit-repository-directories '(("~/sandbox"  . 2)
-                                         ("~/exercism" . 2))))
+          magit-repository-directories '(("~/sandbox" . 2)
+                                         ("~/.config" . 1))))
+
+
+(with-eval-after-load 'projectile
+  ;; Workaround for #8356
+  ;; https://github.com/doomemacs/doomemacs/issues/8356#issuecomment-2853333642
+  (setopt projectile-auto-discover t
+          ;; M-x projectile-cleanup-known-projects
+          projectile-auto-cleanup-known-projects t
+          ;; projectile-project-search-path SPC p D
+          projectile-project-search-path '(("~/sandbox"  . 2)
+                                           ("~/.config"  . 1))))
 
 
 ;; https://github.com/gggion/ob-duckdb?tab=readme-ov-file#doom-emacs
@@ -201,6 +212,7 @@
         org-pomodoro-short-break-sound (file-name-concat doom-user-dir "sounds/bell.mp3")
         org-pomodoro-long-break-sound (file-name-concat doom-user-dir "sounds/bells.mp3")))
 
+
 ;; https://github.com/takaxp/org-tree-slide
 (with-eval-after-load 'org-tree-slide
   ;; Don't increase the font size
@@ -210,22 +222,12 @@
                                    :previous nil
                                    :content nil)))
 
+
 ;; Provide a function to export all entries at once
 (with-eval-after-load 'ox-hugo
   (defun org-hugo-export-all-wim-to-md ()
     (interactive)
     (org-hugo-export-wim-to-md :all-subtrees nil nil :noerror)))
-
-
-(with-eval-after-load 'projectile
-  ;; Workaround for #8356
-  ;; https://github.com/doomemacs/doomemacs/issues/8356#issuecomment-2853333642
-  (setopt projectile-auto-discover t
-          ;; M-x projectile-cleanup-known-projects
-          projectile-auto-cleanup-known-projects t
-          ;; projectile-project-search-path SPC p D
-          projectile-project-search-path '(("~/sandbox"  . 2)
-                                           ("~/exercism" . 2))))
 
 
 ;; https://docs.doomemacs.org/latest/modules/ui/ligatures/#setting-ligatures

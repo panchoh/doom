@@ -252,7 +252,8 @@
     :not "!"
     :and "&&"
     :or "||"
-    :return "return"))
+    :return "return"
+    :yield "yield"))
 
 
 ;; ediff init.el against current init.example.el

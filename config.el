@@ -233,7 +233,7 @@
 ;; https://docs.doomemacs.org/latest/modules/ui/ligatures/#setting-ligatures
 (with-eval-after-load 'go-mode ; in this case the major mode and package named the same thing
   (set-ligatures! 'go-mode
-    ;; function definition
+    ;; function keyword
     :def "func"
 
     ;; boolean values

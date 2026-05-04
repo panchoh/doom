@@ -94,9 +94,9 @@
         +icons
         +flymake)            ; tasing you for every semicolon you forget
        (spell
-        +aspell
+        +everywhere
         +flyspell
-        +everywhere)         ; tasing you for misspelling mispelling
+        +hunspell)           ; tasing you for misspelling mispelling
        grammar               ; tasing grammar mistake every you make
 
        :tools

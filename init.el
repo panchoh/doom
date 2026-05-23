@@ -181,7 +181,9 @@
         +lsp
         +tree-sitter)        ; one-based indices? one-based indices
        (markdown
-        +grip)               ; writing docs for people to ignore
+        +lsp
+        +grip
+        +treesitter)         ; writing docs for people to ignore
        ;; nim                ; python + lisp at the speed of c
        (nix
         +lsp

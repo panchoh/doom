@@ -167,7 +167,9 @@
        (json
         +lsp
         +tree-sitter)        ; At least it ain't XML
-       ;; (java +meghanada)  ; the poster child for carpal tunnel syndrome
+       (java
+        +lsp
+        +tree-sitter)        ; the poster child for carpal tunnel syndrome
        (javascript
         +lsp
         +tree-sitter)        ; all(hope(abandon(ye(who(enter(here))))))

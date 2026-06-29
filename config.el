@@ -117,6 +117,8 @@
 ;; https://github.com/hlissner/doom-emacs/issues/2688
 (setopt confirm-kill-emacs nil)
 
+;; https://www.rahuljuliato.com/posts/emacs-31-around-the-corner
+(setopt view-lossage-auto-refresh t)
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `with-eval-after-load' block, otherwise Doom's defaults may override your

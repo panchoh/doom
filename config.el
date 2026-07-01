@@ -196,6 +196,10 @@
                                            ("~/.config"  . 1))))
 
 
+(with-eval-after-load 'em-term
+  (add-to-list 'eshell-visual-commands "btop" t))
+
+
 ;; https://github.com/gggion/ob-duckdb?tab=readme-ov-file#doom-emacs
 (use-package ob-duckdb)
 (with-eval-after-load 'org
